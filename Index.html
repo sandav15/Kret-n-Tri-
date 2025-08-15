@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kretén Trió – a közösség ereje!</title>
+  <meta name="description" content="Csatlakozz a Kretén Trió Discord közösségéhez: szabályzat, események, rangok és meghívó egy helyen." />
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --panel: #11161d;
+      --muted: #94a3b8;
+      --text: #e5e7eb;
+      --brand: #5865F2; /* Discord lila */
+      --brand-2: #3ba55d; /* zöld akcentus */
+      --ring: 0 0 0 3px rgba(88,101,242,.25);
+      --radius: 1.2rem;
+      --shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+    [data-theme="light"]{
+      --bg: #f7fafc;
+      --panel: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --shadow: 0 10px 25px rgba(2,6,23,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Noto Sans', 'Helvetica Neue', Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text); background:radial-gradient(1200px 600px at 90% -10%, rgba(88,101,242,.18), transparent 60%),
+                         radial-gradient(1000px 500px at -10% 0%, rgba(59,165,93,.12), transparent 60%), var(--bg);
+    }
+    a{color:inherit; text-decoration:none}
+    .container{ width:min(1100px, 92%); margin:0 auto; }
+    header{
+      position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px);
+      background: color-mix(in oklab, var(--bg) 70%, transparent);
+      border-bottom:1px solid color-mix(in oklab, var(--text) 8%, transparent);
+    }
+    nav{ display:flex; align-items:center; justify-content:space-between; padding:.8rem 0; }
+    .brand{ display:flex; align-items:center; gap:.7rem; font-weight:700; letter-spacing:.2px; }
+    .logo{ width:34px; height:34px; border-radius:12px; display:grid; place-items:center; background:linear-gradient(135deg,var(--brand),#8b93ff); box-shadow:var(--shadow)}
+    .nav-links{ display:flex; gap:.8rem; flex-wrap:wrap }
+    .nav-links a{ padding:.55rem .9rem; border-radius:.8rem; font-weight:600; opacity:.9 }
+    .nav-links a:hover{ background:color-mix(in oklab, var(--panel) 85%, transparent); opacity:1 }
+
+    .btn{ display:inline-flex; align-items:center; gap:.55rem; font-weight:700; padding:.9rem 1.05rem; border-radius:1rem; background:linear-gradient(180deg,var(--brand), #4854ea); box-shadow:var(--shadow); color:white; border:none; cursor:pointer }
+    .btn:focus{ outline:none; box-shadow: var(--shadow), var(--ring) }
+    .btn.secondary{ background:linear-gradient(180deg, var(--brand-2), #2a8d4b) }
+    .chip{ display:inline-flex; align-items:center; gap:.5rem; padding:.35rem .7rem; border-radius:999px; font-weight:700; background:color-mix(in oklab, var(--panel) 75%, transparent); color:var(--muted); border:1px solid color-mix(in oklab, var(--text) 9%, transparent)}
+
+    .hero{ padding: 5.5rem 0 3.5rem; display:grid; grid-template-columns:1.2fr .8fr; gap:2rem; align-items:center }
+    .hero h1{ font-size: clamp(2rem, 2.5rem + 1.2vw, 3.2rem); line-height:1.05; margin:.3rem 0 1rem }
+    .hero p{ font-size:1.1rem; color:var(--muted) }
+    .hero .card{ background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 86%, transparent), color-mix(in oklab, var(--panel) 94%, transparent)); padding:1.2rem; border:1px solid color-mix(in oklab, var(--text) 10%, transparent); border-radius:var(--radius); box-shadow:var(--shadow) }
+    .hero .actions{ display:flex; gap:.8rem; flex-wrap:wrap; margin-top:1rem }
+
+    .spark{
+      height:260px; border-radius:var(--radius); background:
+        radial-gradient(700px 250px at 85% -20%, rgba(88,101,242,.35), transparent 60%),
+        radial-gradient(500px 200px at 10% 110%, rgba(59,165,93,.25), transparent 60%),
+        linear-gradient(180deg, color-mix(in oklab, var(--panel) 86%, transparent), color-mix(in oklab, var(--panel) 94%, transparent));
+      border:1px solid color-mix(in oklab, var(--text) 10%, transparent); box-shadow:var(--shadow); position:relative; display:grid; place-items:center; overflow:hidden
+    }
+    .spark::after{ content:""; position:absolute; inset:0; background-image: repeating-linear-gradient(135deg, transparent 0 12px, color-mix(in oklab, var(--text) 8%, transparent) 12px 13px); opacity:.25; }
+
+    section{ padding: 3.5rem 0 }
+    .grid{ display:grid; gap:1rem; grid-template-columns: repeat(12, 1fr) }
+    .col-4{ grid-column: span 4 }
+    .col-6{ grid-column: span 6 }
+    .col-12{ grid-column: span 12 }
+
+    .card{ background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 86%, transparent), color-mix(in oklab, var(--panel) 94%, transparent)); border:1px solid color-mix(in oklab, var(--text) 10%, transparent); border-radius:var(--radius); padding:1.2rem; box-shadow:var(--shadow) }
+    .card h3{ margin:.2rem 0 .6rem }
+    .muted{ color:var(--muted) }
+
+    .rules li{ margin:.4rem 0 }
+
+    .staff{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1rem }
+    .person{ display:flex; gap:.8rem; align-items:center }
+    .avatar{ width:54px; height:54px; border-radius:14px; background:linear-gradient(135deg,#64748b,#94a3b8); display:grid; place-items:center; font-weight:800 }
+
+    .timeline{ position:relative; margin-left:.3rem }
+    .timeline::before{ content:""; position:absolute; left:10px; top:.3rem; bottom:.3rem; width:2px; background:color-mix(in oklab, var(--text) 15%, transparent) }
+    .t-item{ position:relative; padding-left:2.2rem; margin:1rem 0 }
+    .t-item::before{ content:""; position:absolute; left:4px; top:.45rem; width:14px; height:14px; border-radius:50%; background:var(--brand) }
+
+    .faq details{ background:transparent; border:1px solid color-mix(in oklab, var(--text) 10%, transparent); padding:1rem 1.1rem; border-radius:1rem }
+    .faq details[open]{ background:color-mix(in oklab, var(--panel) 85%, transparent) }
+    .faq summary{ cursor:pointer; font-weight:700 }
+
+    .discord-embed{ height:380px; border-radius:var(--radius); overflow:hidden; border:1px solid color-mix(in oklab, var(--text) 10%, transparent) }
+
+    footer{ padding:2.5rem 0; color:var(--muted); border-top:1px solid color-mix(in oklab, var(--text) 10%, transparent) }
+
+    .top-btn{ position:fixed; right:1rem; bottom:1rem; border:none; border-radius:999px; padding:.8rem; box-shadow:var(--shadow); background:var(--panel); cursor:pointer }
+
+    @media (max-width: 900px){
+      .hero{ grid-template-columns:1fr; }
+      .grid{ grid-template-columns: repeat(6, 1fr) }
+      .col-4{ grid-column: span 6 }
+      .col-6{ grid-column: span 6 }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#home" aria-label="Ugrás a kezdőlapra">
+          <span class="logo">💬</span>
+          <span>Kretén Trió</span>
+        </a>
+        <div class="nav-links" role="navigation" aria-label="Fő navigáció">
+          <a href="#rules">Szabályzat</a>
+          <a href="#staff">Csapat</a>
+          <a href="#events">Események</a>
+          <a href="#faq">GYIK</a>
+          <a href="#join" class="chip">Csatlakozás</a>
+          <button id="themeToggle" class="chip" aria-label="Téma váltása">🌗 Téma</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="container">
+    <section class="hero" aria-labelledby="h1">
+      <div class="card">
+        <span class="chip">Közösségi szerver</span>
+        <h1 id="h1">Kretén Trió – a közösség ereje!</h1>
+        <p>Barátságos közösség, aktív beszélgetések, játékestek és kreatív projektek. Tarts velünk és építsük együtt a szerver történetét!</p>
+        <div class="actions">
+          <a class="btn" href="https://discord.gg/INVITE_URL_CSERE" target="_blank" rel="noopener" aria-label="Csatlakozás Discord meghívóval">🚀 Meghívó kérése</a>
+          <a class="btn secondary" href="#rules">📜 Szabályzat</a>
+        </div>
+        <p class="muted" style="margin-top:.6rem">Szerver szlogen: „Kretén Trió – a közösség ereje!”</p>
+      </div>
+      <div class="spark" aria-hidden="true">
+        <div class="muted" style="text-align:center; padding:1rem">
+          <strong>Élő Discord előnézet</strong>
+          <p>Az alábbi embedhez engedélyezd a szerver widgetet és cseréld az <code>WIDGET_ID_CSERE</code>-t.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="rules">
+      <div class="grid">
+        <div class="col-6">
+          <div class="card">
+            <h3>🎯 Alapelvek</h3>
+            <ul class="rules">
+              <li>Tisztelet, józan ész, közösségi normák betartása.</li>
+              <li>NSFW és zaklatás tilos. Gyűlöletkeltés és doxxolás szigorúan tiltott.</li>
+              <li>Staff döntése végleges – fellebbezés privátban kulturált formában.</li>
+              <li>Csatorna témák tisztelete; spoilert csak spoiler taggel.</li>
+            </ul>
+            <p class="muted">A részletes szabályzatot a #szabályzat csatornában találod.</p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card">
+            <h3>🛠️ Technikai irányelvek</h3>
+            <ul class="rules">
+              <li>Hangcsatornákban normál hangerő, torzítás kerülése.</li>
+              <li>Bot parancsok a kijelölt csatornákban.</li>
+              <li>Reklám csak engedéllyel.</li>
+              <li>Probléma? Nyiss ticketet – segítünk.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="staff">
+      <div class="card">
+        <h2>👥 Csapat</h2>
+        <div class="staff">
+          <div class="person">
+            <div class="avatar">SD</div>
+            <div>
+              <strong>Sandav_15</strong>
+              <div class="muted">Tulajdonos • Közösségépítő</div>
+            </div>
+          </div>
+          <div class="person">
+            <div class="avatar">AD</div>
+            <div>
+              <strong>Admin csapat</strong>
+              <div class="muted">Moderáció, ticketek, események</div>
+            </div>
+          </div>
+          <div class="person">
+            <div class="avatar">BOT</div>
+            <div>
+              <strong>Botok</strong>
+              <div class="muted">Automod, zene, rang kiosztás</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="events">
+      <div class="grid">
+        <div class="col-6">
+          <div class="card">
+            <h2>📅 Események</h2>
+            <div class="timeline">
+              <div class="t-item">
+                <strong>Heti játékest</strong>
+                <div class="muted">Péntek 19:00 – Minecraft/Co-op rotáció</div>
+              </div>
+              <div class="t-item">
+                <strong>Zene & chill</strong>
+                <div class="muted">Szombat 20:00 – közös playlist, kérelmek</div>
+              </div>
+              <div class="t-item">
+                <strong>Visszatérő tagok brief</strong>
+                <div class="muted">Vasárnap 18:00 – heti összefoglaló</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card">
+            <h2>📡 Élő Discord widget</h2>
+            <div class="discord-embed">
+              <iframe title="Discord Widget" src="https://discord.com/widget?id=WIDGET_ID_CSERE&theme=dark" width="100%" height="100%" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            </div>
+            <p class="muted" style="margin-top:.6rem">Beállítás: Discord → Szerverbeállítások → Widget → <em>Engedélyezés</em>. Másold be a szerver azonosítóját az URL-be.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <div class="grid">
+        <div class="col-6">
+          <div class="card">
+            <h2>❓ GYIK</h2>
+            <details>
+              <summary>Hogyan csatlakozhatok a szerverhez?</summary>
+              <p>Nyomd meg a <em>Meghívó kérése</em> gombot fent, vagy használd a meghívó linket. Ha nem működik, írj a tulajnak.</p>
+            </details>
+            <details>
+              <summary>Van életkor korlátozás?</summary>
+              <p>13+ (Discord TOS). Bizonyos csatornák 16+/18+ megjelölést kaphatnak.</p>
+            </details>
+            <details>
+              <summary>Milyen játékokat játszunk?</summary>
+              <p>Főleg Minecraft (Java/Bedrock), de van rotáció: FPS, party és co-op címek.</p>
+            </details>
+          </div>
+        </div>
+        <div class="col-6" id="join">
+          <div class="card">
+            <h2>🚀 Csatlakozz most</h2>
+            <p>Gyere fel, mutatkozz be és kapj kezdő rangot!</p>
+            <div class="actions">
+              <a class="btn" href="https://discord.gg/INVITE_URL_CSERE" target="_blank" rel="noopener">Meghívó megnyitása</a>
+              <a class="btn secondary" href="#rules">Szabályok megtekintése</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="grid">
+        <div class="col-6">
+          <strong>Kretén Trió</strong>
+          <div class="muted">© <span id="year"></span> Minden jog fenntartva.</div>
+        </div>
+        <div class="col-6" style="text-align:right">
+          <a class="chip" href="#home">⬆️ Vissza a tetejére</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="top-btn" title="Vissza fel" aria-label="Vissza a tetejére" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆️</button>
+
+  <script>
+    // Smooth scroll a nav linkekhez
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        if(id){
+          const el = document.getElementById(id);
+          if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+        }
+      })
+    })
+    // Téma váltó
+    const key = 'kt_theme';
+    const apply = v=>document.documentElement.setAttribute('data-theme', v);
+    const saved = localStorage.getItem(key) || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    apply(saved);
+    document.getElementById('themeToggle').addEventListener('click',()=>{
+      const next = document.documentElement.getAttribute('data-theme')==='light'?'dark':'light';
+      apply(next); localStorage.setItem(key,next);
+    });
+    // Év
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
